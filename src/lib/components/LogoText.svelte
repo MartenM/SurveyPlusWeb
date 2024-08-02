@@ -1,10 +1,11 @@
 <script lang="ts">
+    import { base } from '$app/paths';
 
     export let textSize: string = "large";
 
 </script>
 
-<a href="/">
+<a href="{base}">
     {#if textSize === 'large'}
         <div class="flex flex-row justify-center mb-2">
             <span class="text-slate-700 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight dark:text-white">Survey</span>

@@ -1,9 +1,9 @@
 
 <script lang="ts">
-
-import {Button} from "flowbite-svelte";
-import {AngleRightOutline, FileOutline} from "flowbite-svelte-icons";
-import LogoText from "$lib/components/LogoText.svelte";
+    import { base } from '$app/paths';
+    import {Button} from "flowbite-svelte";
+    import {AngleRightOutline, FileOutline} from "flowbite-svelte-icons";
+    import LogoText from "$lib/components/LogoText.svelte";
 
 </script>
 
@@ -19,7 +19,7 @@ import LogoText from "$lib/components/LogoText.svelte";
                     <div class="flex flex-row px-10 justify-center mt-8">
                         <a href="https://www.spigotmc.org/resources/49496/"><Button class="bg-amber-500"> Resource Page <FileOutline class="w-4 h-4 ml-2"/></Button></a>
                         <div class="w-4"></div>
-                        <a href="/view/demo"><Button color="light">Demo <AngleRightOutline class="w-4 h-4 ml-2" /></Button></a>
+                        <a href="{base}/view/demo"><Button color="light">Demo <AngleRightOutline class="w-4 h-4 ml-2" /></Button></a>
                     </div>
                 </div>
             </div>
