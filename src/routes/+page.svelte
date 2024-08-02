@@ -7,6 +7,10 @@
 
 </script>
 
+<svelte:head>
+    <title>SurveyPlus Web</title>
+</svelte:head>
+
 <div class="landing">
     <div class="container">
         <div class="row center-xs">

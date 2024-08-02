@@ -31,6 +31,10 @@
     ]
 </script>
 
+<svelte:head>
+    <title>SurveyPlus Web | {surveyResult.meta.name}</title>
+</svelte:head>
+
 <div class="flex flex-col bg-slate-100 border-slate-200 border-2 rounded-xl dark:bg-amber-800 py-8 justify-center mb-4">
     <div class="flex flex-col justify-center mb-2">
         <h1 class="text-slate-700 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight dark:text-white">{surveyResult.meta.name}</h1>
