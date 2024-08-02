@@ -3,6 +3,7 @@
 
 import {Button} from "flowbite-svelte";
 import {AngleRightOutline, FileOutline} from "flowbite-svelte-icons";
+import LogoText from "$lib/components/LogoText.svelte";
 
 </script>
 
@@ -10,11 +11,8 @@ import {AngleRightOutline, FileOutline} from "flowbite-svelte-icons";
     <div class="container">
         <div class="row center-xs">
             <div class="col-xs-6">
-                <div class="flex flex-col bg-slate-100 rounded-xl dark:bg-amber-800 py-8 justify-center">
-                    <div class="flex flex-row justify-center mb-2">
-                        <span class="text-slate-700 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight dark:text-white">Survey</span>
-                        <span class="text-amber-400 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight dark:text-white">Plus</span>
-                    </div>
+                <div class="flex flex-col bg-slate-200 rounded-xl dark:bg-amber-800 py-8 justify-center">
+                    <LogoText/>
 
                     <div class="text-slate-400 font-extrabold">Online result viewer</div>
 

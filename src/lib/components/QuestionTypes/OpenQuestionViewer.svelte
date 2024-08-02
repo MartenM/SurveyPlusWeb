@@ -38,7 +38,6 @@
 
 <!-- Pagination controls -->
 <div class="flex flex-col items-center">
-
     <div class="flex space-x-3 rtl:space-x-reverse">
         <Button color="light" large class="flex items-center" on:click={() => previousPage()} disabled={$currentPage === 0}>
             <ArrowLeftOutline class="me-2 w-5 h-5" />
@@ -58,7 +57,7 @@
 <!-- Display the paginated entries -->
 <div class="p-5">
     {#each paginatedEntries as entry, index}
-        <div class="flex flex-col items-start m-5 bg-white rounded-xl">
+        <div class="flex flex-col border-slate-200 border-2 items-start m-5 bg-white rounded-xl">
             <div class="w-full p-4"><span class="mx-1 text-lg font-bold text-slate-400">“</span>{entry.answer}<span class="mx-1 text-lg font-bold text-slate-400">”</span></div>
             <div class="flex flex-row bg-blue-200 rounded-b-xl items-center w-full p-1" >
                 <img class="avatar ml-4" src="https://mc-heads.net/avatar/{entry.uuid}" alt="avatar">
