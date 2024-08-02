@@ -8,7 +8,9 @@ const config = {
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
 
-	base: "/SurveyPlusWeb/",
+	paths: {
+		base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+	},
 
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
