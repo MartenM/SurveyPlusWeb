@@ -24,7 +24,7 @@ jobs:
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
-          npm run build
+          npm run build-gh-pages
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
@@ -49,6 +49,15 @@ jobs:
 
     # Deployment step
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: public/
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: github-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
