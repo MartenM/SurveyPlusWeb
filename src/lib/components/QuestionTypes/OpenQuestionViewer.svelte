@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {Button, Pagination, PaginationItem} from "flowbite-svelte";
+    import {Button} from "flowbite-svelte";
 
     export let answers: OpenAnswers;
     import { writable } from 'svelte/store';
@@ -19,6 +19,17 @@
         $currentPage * entriesPerPage,
         ($currentPage + 1) * entriesPerPage
     );
+
+    function handlePageChange(input: Event) {
+        const target = input.target as HTMLInputElement;
+        if (target.value === "") return;
+
+        const newPage = target.valueAsNumber;
+        if (newPage < 1) return;
+        if (newPage > totalPages) return;
+
+        currentPage.set(newPage - 1);
+    }
 
     // Function to change page
     function changePage(newPage: number) {
@@ -44,7 +55,14 @@
             Previous
         </Button>
         <div class="my-2">
-            <span>Page</span> {$currentPage + 1} <span>of</span> {totalPages}
+            <span>Page</span>
+            <input
+                type="number" value={$currentPage + 1}
+                on:input={handlePageChange} min="1" max="{totalPages}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+            <span>of</span>
+            {totalPages}
         </div>
         <Button color="light" large class="flex items-center" on:click={() => nextPage()} disabled={$currentPage === totalPages - 1}>
             Next
